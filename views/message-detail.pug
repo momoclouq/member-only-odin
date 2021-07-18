@@ -1,0 +1,8 @@
+extends layout 
+
+block content 
+    h2 Id: #{message._id}
+    h3 Title: #{message.title}
+    p Content: #{message.content}
+    p Timestamp: #{message.timestamp}
+    p User: #[a(href=message.user.url) #{message.user.username}]

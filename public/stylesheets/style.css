@@ -1,0 +1,20 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.message{
+  padding: 10px;
+  color: black;
+  background-color: gainsboro;
+}
+
+.user{
+  padding: 10px;
+  background-color: darkgrey;
+  color: white;
+}

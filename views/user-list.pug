@@ -1,0 +1,12 @@
+extends layout 
+
+block content 
+    h1 List of all users 
+    ol
+        each userx in users 
+            div(class="user")
+                div(class="username") #[a(href=userx.url) #{userx.username}]
+                div(class="status") #{userx.membership_status}
+
+    if error 
+        div #{error}

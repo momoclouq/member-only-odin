@@ -1,0 +1,26 @@
+extends layout 
+
+block content 
+    h1(class="banner") Welcome to the members only club
+    hr
+    each message in messages
+        div(class="message")
+            div(class="messageid") #[a(href=message.url) #{message._id}]
+            div(class="username") #[a(href=message.user.url) #{message.user.username}]
+            div(class="title") #{message.title}
+            div(class="content") #{message.content}
+            div(class="timestamp") #{message.timestamp}
+
+    form(action="" method="POST")
+        h5 Create your message
+        label(for="title") Title
+        input(type="text" placeholder="The big new" required="true" name="title" id="message_title" value=(undefined === message ? "" : message.title)) 
+        br
+        label(for="content") Content 
+        input(type="text" placeholder="I can fly" required="true" name="content" id="message_content" value=(undefined === message ? "" : message.content))
+        br
+        if errors 
+            ul 
+                for error in errors 
+                    li!= errors.message
+        input(type="submit" value="Create message") 

@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    ul 
+        if user 
+          li #[a(href="/board") main board]
+          li #[a(href=user.url) Hi #{user.username}]
+          li #[a(href="/log-out") Log out]
+          li #[a(href="/users") All users] 
+          li #[a(href="/messages") All messages]
+        else 
+          li #[a(href="/log-in") Log in]
+          li #[a(href="/sign-up") Sign up]
+      
+    block content
